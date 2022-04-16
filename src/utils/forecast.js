@@ -13,7 +13,8 @@ const forecast = (latitude, langitude, callback) => {
 		} else if (body.error) {
 			callback ('no matching result, please try again', undefined)
 		} else {
-			callback (undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike + ' degres out')
+			console.log(body.current.weather_descriptions[0])
+			callback (undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike + ' degres out. The humidity is ' + body.current.humidity + '%.')
 		}
 	})
 }
